@@ -1,4 +1,4 @@
-import Model.ModelNumber;
+import Model.ModelGetNumber;
 import Service.NetworkService;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -6,28 +6,29 @@ import retrofit2.Response;
 
 import java.util.List;
 
-public class GetData {
-    void getResponse(){
+class GetData {
+    void getResponse() {
         NetworkService.getNetworkService()
                 .getAPI().getPrecautionary()
-                .enqueue(new Callback<List<ModelNumber>>() {
+                .enqueue(new Callback<List<ModelGetNumber>>() {
                     @Override
-                    public void onResponse(Call<List<ModelNumber>> call, Response<List<ModelNumber>> response) {
-                        List<ModelNumber> modelNumbers = response.body();
-                        printData(modelNumbers);
+                    public void onResponse(Call<List<ModelGetNumber>> call, Response<List<ModelGetNumber>> response) {
+                        List<ModelGetNumber> modelGetNumbers = response.body();
+                        printData(modelGetNumbers);
                     }
 
                     @Override
-                    public void onFailure(Call<List<ModelNumber>> call, Throwable t) {
+                    public void onFailure(Call<List<ModelGetNumber>> call, Throwable t) {
 
                     }
                 });
     }
 
 
-    private void printData(List<ModelNumber> modelNumbers){
-        for (ModelNumber modelNumber : modelNumbers) {
-            System.out.println(modelNumber.prime.toString());
-        }
+    private void printData(List<ModelGetNumber> modelGetNumbers) {
+        if (modelGetNumbers != null)
+            for (ModelGetNumber modelGetNumber : modelGetNumbers) {
+                System.out.println(modelGetNumber.prime.toString());
+            }
     }
 }

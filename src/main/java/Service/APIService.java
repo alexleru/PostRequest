@@ -1,7 +1,9 @@
 package Service;
 
-import Model.ModelNumber;
+import Model.ModelGetNumber;
+import Model.ModelSetNumber;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
@@ -9,8 +11,8 @@ import java.util.List;
 
 public interface APIService {
     @GET("getPrimes.php")
-    Call<List<ModelNumber>> getPrecautionary();
+    Call<List<ModelGetNumber>> getPrecautionary();
 
     @POST("setPrimes.php")
-    Call<List<ModelNumber>> setPrecautionary();
+    Call<Void> setPrecautionary(@Body List<ModelSetNumber> modelSetNumber);
 }
