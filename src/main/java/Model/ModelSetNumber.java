@@ -8,5 +8,5 @@ import java.math.BigInteger;
 public class ModelSetNumber {
     @SerializedName("prime")
     @Expose
-    public String prime;
+    public BigInteger prime;
 }

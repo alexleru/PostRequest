@@ -1,7 +1,6 @@
 package Service;
 
 import Model.ModelGetNumber;
-import Model.ModelSetNumber;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -14,7 +13,7 @@ public interface APIService {
     @GET("getPrimes.php")
     Call<List<ModelGetNumber>> getPrecautionary();
 
-    @Headers({ "Content-type: application/json" })
+    @Headers({"Content-type: application/json"})
     @POST("setPrimes.php")
-    Call<List<ModelGetNumber>> setPrecautionary(@Body List<ModelSetNumber> modelSetNumber);
+    Call<List<ModelGetNumber>> setPrecautionary(@Body List<ModelGetNumber> modelSetNumber);
 }
