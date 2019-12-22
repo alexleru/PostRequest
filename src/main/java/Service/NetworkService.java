@@ -10,6 +10,7 @@ public class NetworkService {
     private APIService API;
 
     private NetworkService(){
+
         retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())

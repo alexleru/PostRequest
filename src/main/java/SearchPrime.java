@@ -1,11 +1,11 @@
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.List;
 
 public class SearchPrime {
+    public static ArrayList<BigInteger> newArrayFromPrime = new ArrayList<>();
+
     public static ArrayList<BigInteger> searchPrime(ArrayList<BigInteger> oldArrayFromPrime) {
         var check = true;
-        List<BigInteger> newArrayFromPrime = new ArrayList<>();
         BigInteger checkInt = maxBigPrime(oldArrayFromPrime);
         while (check) {
             checkInt = checkInt.add(BigInteger.TWO);

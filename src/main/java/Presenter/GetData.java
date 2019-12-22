@@ -16,8 +16,8 @@ public class GetData {
                 .getAPI().getPrecautionary();
         try {
             Response<List<ModelGetNumber>> response = callSync.execute();
+
             modelGetNumbers = response.body();
-            //printData(modelGetNumbers);
         } catch (IOException e) {
             e.printStackTrace();
         }
